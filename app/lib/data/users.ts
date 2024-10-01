@@ -13,6 +13,11 @@ export type User = {
     password: string; // plaintext when submitted from form, hashed when in database
 };
 
+const usernameInvalidCharPattern = /[^\w-]/g;
+const displayNameInvalidCharPattern = /[^\w- ]/g;
+const passwordInvalidCharPattern = /[^\w\*\?\$&%#@!-]/g;
+const passwordSpecialChars = /[_\*\?\$&%#@!-]/g;
+
 export const isUser = (obj: any): obj is User => {
     if (obj._id && !(obj._id instanceof ObjectId)) return false;
     if (obj.displayName && typeof obj.displayName !== "string") return false;
@@ -21,14 +26,34 @@ export const isUser = (obj: any): obj is User => {
     if (obj.password === undefined || typeof obj.password !== "string")
         return false;
 
-    // TODO: character validation
-    if (obj.username.length < 5 || obj.username.length > 25) return false;
+    return true;
+};
+
+export const isValidUser = (user: User): boolean => {
+    if (!isUser(user)) return false;
     if (
-        obj.displayName &&
-        (obj.displayName.length < 5 || obj.displayName.length > 25)
+        user.username.length < 5 ||
+        user.username.length > 25 ||
+        user.username.match(usernameInvalidCharPattern) !== null
     )
         return false;
-    if (obj.password.length < 8 || obj.password.length > 50) return false;
+    if (
+        user.displayName &&
+        (user.displayName.length < 5 ||
+            user.displayName.length > 25 ||
+            user.displayName.match(displayNameInvalidCharPattern) !== null)
+    )
+        return false;
+    if (
+        user.password.length < 8 ||
+        user.password.length > 50 ||
+        user.password.match(passwordSpecialChars) === null || // at least 1 special char
+        user.password.match(/[A-Z]/g) === null || // at least one capital letter
+        user.password.match(/[a-z]/g) === null || // at least one lowercase letter
+        user.password.match(/\d/g) === null || // at least one number
+        user.password.match(passwordInvalidCharPattern) !== null // no invalid patterns
+    )
+        return false;
 
     return true;
 };
@@ -36,7 +61,7 @@ export const isUser = (obj: any): obj is User => {
 /** database funcs for users */
 
 export const createUser = async (user: User): Promise<User> => {
-    if (!isUser(user))
+    if (!isValidUser(user))
         throw {
             msg: `ERROR: provided user does not conform to type User`,
             code: 400
