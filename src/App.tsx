@@ -1,6 +1,7 @@
 import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function App() {
     return (
@@ -26,24 +27,27 @@ function App() {
                     Get started with a simple, intuitive lesson.
                 </h2>
                 <div className="container">
-                    <Button
-                        href="/vocab"
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/vocab"
                         variant="primary"
                         size="lg"
                         className="mx-2"
                     >
                         Vocabulary
                     </Button>
-                    <Button
-                        href="/grammar"
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/grammar"
                         variant="success"
                         size="lg"
                         className="mx-2"
                     >
                         Grammar & Verbs
                     </Button>
-                    <Button
-                        href="/conversations"
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/conversations"
                         variant="danger"
                         size="lg"
                         className="mx-2"

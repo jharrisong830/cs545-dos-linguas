@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
     return (
@@ -11,7 +12,11 @@ export default function NotFound() {
                 Make sure you typed the URL correctly, or click the button below
                 to return to the homepage
             </p>
-            <Button variant="primary" href="/">
+            <Button // @ts-ignore
+                as={Link}
+                variant="primary"
+                to="/"
+            >
                 Go to Home
             </Button>
         </div>

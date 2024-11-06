@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Vocab() {
     return (
@@ -12,8 +13,9 @@ export default function Vocab() {
 
             <div className="py-4">
                 <div className="container">
-                    <Button
-                        href="/study?type=vocab&category=dining"
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/study?type=vocab&category=dining"
                         variant="primary"
                         size="lg"
                         className="mx-2"
