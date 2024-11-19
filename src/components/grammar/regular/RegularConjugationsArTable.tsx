@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
-import { conjugationTable } from "../../../data/verbs";
+import ConjugationTable from "./ConjugationTable";
+import { arVerbs } from "../../../data/verbs";
 
 // renders with state "regular-conjugations-ar-table"
 
@@ -18,9 +19,7 @@ export default function RegularConjugationArTable({
 
             <div className="py-4">
                 <div className="container">
-                    <p>TABLE GOES HERE</p>
-
-                    <p>{JSON.stringify(conjugationTable)}</p>
+                    <ConjugationTable sampleVerbs={arVerbs.slice(0, 3)} />
 
                     <Button
                         variant="secondary"
