@@ -3,6 +3,8 @@ import RegularConjugationsIntro from "./components/grammar/regular/RegularConjug
 import { useEffect, useState } from "react";
 import NotFound from "./NotFound";
 import RegularConjugationArTable from "./components/grammar/regular/RegularConjugationsArTable";
+import DiningVocab from "./components/vocab/DiningVocab";
+import DiningVocabIntro from "./components/vocab/DiningVocabIntro";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -14,6 +16,9 @@ export default function Study() {
         if (initialType === "grammar" && initialCategory === "regular") {
             setState("regular-conjugations-intro");
         }
+        if (initialType === "vocab" && initialCategory === "dining") {
+            setState("dining-vocab-intro");
+        }
     }, [params]);
 
     const renderCurrentState = (currState?: string) => {
@@ -24,6 +29,10 @@ export default function Study() {
                 return <RegularConjugationsIntro setState={setState} />;
             case "regular-conjugations-ar-table":
                 return <RegularConjugationArTable setState={setState} />;
+            case "dining-vocab-intro":
+                return <DiningVocabIntro setState={setState}/>;
+            case "dining-vocab":
+                return <DiningVocab setState={setState}/>;
             default:
                 return <NotFound />;
         }

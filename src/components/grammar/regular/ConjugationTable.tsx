@@ -7,6 +7,7 @@ export default function ConjugationTable({
     sampleVerbs: Array<Verb>;
 }) {
     sampleVerbs = generateConjugations(sampleVerbs);
+    console.log(sampleVerbs)
 
     return (
         <Table striped bordered hover>
@@ -20,31 +21,31 @@ export default function ConjugationTable({
             </thead>
             <tbody>
                 <tr>
-                    <th>yo</th>
+                    <th>yo (I)</th>
                     {sampleVerbs.map((v) => (
                         <td>{v.yo}</td>
                     ))}
                 </tr>
                 <tr>
-                    <th>tu</th>
+                    <th>tu (you) </th>
                     {sampleVerbs.map((v) => (
                         <td>{v.tu}</td>
                     ))}
                 </tr>
                 <tr>
-                    <th>el/ella/usted</th>
+                    <th>el/ella/usted (he/she/you)</th>
                     {sampleVerbs.map((v) => (
                         <td>{v.elEllaUsted}</td>
                     ))}
                 </tr>
                 <tr>
-                    <th>nosotros</th>
+                    <th>nosotros (us)</th>
                     {sampleVerbs.map((v) => (
                         <td>{v.nosotros}</td>
                     ))}
                 </tr>
                 <tr>
-                    <th>ellos/ellas/ustedes</th>
+                    <th>ellos/ellas/ustedes (they, they, you)</th>
                     {sampleVerbs.map((v) => (
                         <td>{v.ellosEllasUstedes}</td>
                     ))}
