@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {Route, Link, Routes} from 'react-router-dom';
 
 // renders with state "regular-conjugartions-intro"
 
@@ -88,6 +88,16 @@ export default function DiningVocab({
                     >
                         Back to Home
                     </Button>
+        <Button // @ts-ignore
+            onClick={() =>
+                setState("quiz")
+            }
+            variant="success"
+            size="lg"
+            className="mx-2"
+        >
+            Test Your Knowledge
+        </Button>   
         </main>
     );
 }

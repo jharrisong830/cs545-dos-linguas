@@ -5,6 +5,7 @@ import NotFound from "./NotFound";
 import RegularConjugationArTable from "./components/grammar/regular/RegularConjugationsArTable";
 import DiningVocab from "./components/vocab/DiningVocab";
 import DiningVocabIntro from "./components/vocab/DiningVocabIntro";
+import Quiz from "./components/vocab/VocabQuiz";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -33,6 +34,8 @@ export default function Study() {
                 return <DiningVocabIntro setState={setState}/>;
             case "dining-vocab":
                 return <DiningVocab setState={setState}/>;
+            case "quiz":
+                return <Quiz setState={setState} />;
             default:
                 return <NotFound />;
         }
