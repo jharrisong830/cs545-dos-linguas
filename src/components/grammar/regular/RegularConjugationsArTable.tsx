@@ -19,6 +19,32 @@ export default function RegularConjugationArTable({
 
             <div className="py-4">
                 <div className="container">
+                    <p>
+                        Here are some common verbs ending with the{" "}
+                        <strong>-ar</strong> suffix.
+                    </p>
+
+                    <p>
+                        For <strong>-ar</strong> verbs, simply replace{" "}
+                        <strong>-ar</strong> with the appropriate conjugation
+                        ending, depending on the subject.
+                    </p>
+
+                    <p>
+                        To say "I work", we take "trabaj<strong>ar</strong>",
+                        and replace <strong>-ar</strong> with{" "}
+                        <strong>-o</strong>. "Yo trabaj<strong>o</strong>"
+                        translates to "I work".
+                    </p>
+
+                    <p>
+                        The same steps can be used for any other subject. To say
+                        "we work", we take "trabaj<strong>ar</strong>", and
+                        replace <strong>-ar</strong> with <strong>-amos</strong>
+                        . "Nosotros trabaj<strong>amos</strong>" translates to
+                        "we work".
+                    </p>
+
                     <ConjugationTable sampleVerbs={arVerbs.slice(0, 3)} />
 
                     <Button
