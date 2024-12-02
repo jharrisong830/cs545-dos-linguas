@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // renders with state "regular-conjugartions-intro"
 
@@ -33,11 +34,20 @@ export default function RegularConjugationsIntro({
                         regular verbs ending with -ar, -er, and -ir.
                     </p>
 
+                    <Button // @ts-ignore
+                        as={Link}
+                        variant="secondary"
+                        to="/grammar"
+                        className="mx-2"
+                    >
+                        Back
+                    </Button>
                     <Button
                         variant="primary"
                         onClick={() =>
                             setState("regular-conjugations-ar-table")
                         }
+                        className="mx-2"
                     >
                         Continue
                     </Button>

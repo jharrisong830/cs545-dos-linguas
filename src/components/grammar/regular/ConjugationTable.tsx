@@ -7,7 +7,7 @@ export default function ConjugationTable({
     sampleVerbs: Array<Verb>;
 }) {
     sampleVerbs = generateConjugations(sampleVerbs);
-    console.log(sampleVerbs)
+    console.log(sampleVerbs);
 
     return (
         <Table striped bordered hover>
@@ -15,7 +15,9 @@ export default function ConjugationTable({
                 <tr>
                     <th>Subject</th>
                     {sampleVerbs.map((v) => (
-                        <th>{v.infinitive}</th>
+                        <th>
+                            {v.infinitive} ({v.english})
+                        </th>
                     ))}
                 </tr>
             </thead>

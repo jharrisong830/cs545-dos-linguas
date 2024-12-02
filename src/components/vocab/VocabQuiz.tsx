@@ -1,9 +1,9 @@
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
-import {Route, Link, Routes} from 'react-router-dom';
+import { Route, Link, Routes } from "react-router-dom";
 import MultipleChoice from "../quiz/MultipleChoice";
 import openEnded from "../quiz/OpenEnded";
-import React, { useState }from "react";
+import React, { useState } from "react";
 
 // renders with state "regular-conjugartions-intro"
 
@@ -28,7 +28,12 @@ export default function Quiz({
     let mcQuestions =
         questions &&
         questions.map((question) => {
-            return <MultipleChoice choices={question.choices} correctIndex={question.correctIndex} />;
+            return (
+                <MultipleChoice
+                    choices={question.choices}
+                    correctIndex={question.correctIndex}
+                />
+            );
         });
 
     return (
@@ -36,7 +41,9 @@ export default function Quiz({
             <h1>Test Your Knowledge</h1>
             {questions.map((q, index) => (
                 <div key={index}>
-                    <h2>{index + 1}. {q.question}</h2>
+                    <h2>
+                        {index + 1}. {q.question}
+                    </h2>
                     {mcQuestions[index]}
                 </div>
             ))}
@@ -45,7 +52,7 @@ export default function Quiz({
             <br />
             <br />
             <br />
-            
+
             <Button // @ts-ignore
                 as={Link}
                 to="/"
@@ -56,6 +63,5 @@ export default function Quiz({
                 Back to Home
             </Button>
         </>
-
     );
 }

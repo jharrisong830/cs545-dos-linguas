@@ -13,7 +13,7 @@
 
 // export default MultipleChoice;
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 interface MultipleChoiceProps {
@@ -21,7 +21,10 @@ interface MultipleChoiceProps {
     correctIndex: number;
 }
 
-const MultipleChoice: React.FC<MultipleChoiceProps> = ({ choices, correctIndex }) => {
+const MultipleChoice: React.FC<MultipleChoiceProps> = ({
+    choices,
+    correctIndex
+}) => {
     const [selected, setSelected] = useState<number | null>(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -34,9 +37,17 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ choices, correctIndex }
         <form onSubmit={handleSubmit}>
             {choices.map((choice, index) => (
                 <div key={index}>
-                    <label style={{ color: isSubmitted ? (index === correctIndex ? 'green' 
-                        : (selected === index ? 'red' : 'black')) 
-                        : 'black' }}>
+                    <label
+                        style={{
+                            color: isSubmitted
+                                ? index === correctIndex
+                                    ? "green"
+                                    : selected === index
+                                      ? "red"
+                                      : "black"
+                                : "black"
+                        }}
+                    >
                         <input
                             type="radio"
                             name="choice"
@@ -48,7 +59,9 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ choices, correctIndex }
                     </label>
                 </div>
             ))}
-            <Button type="submit" disabled={isSubmitted}>Submit</Button>
+            <Button type="submit" disabled={isSubmitted}>
+                Submit
+            </Button>
         </form>
     );
 };

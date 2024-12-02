@@ -31,9 +31,9 @@ export default function Study() {
             case "regular-conjugations-ar-table":
                 return <RegularConjugationArTable setState={setState} />;
             case "dining-vocab-intro":
-                return <DiningVocabIntro setState={setState}/>;
+                return <DiningVocabIntro setState={setState} />;
             case "dining-vocab":
-                return <DiningVocab setState={setState}/>;
+                return <DiningVocab setState={setState} />;
             case "quiz":
                 return <Quiz setState={setState} />;
             default:
