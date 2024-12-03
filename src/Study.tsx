@@ -34,8 +34,8 @@ export default function Study() {
                 return <DiningVocabIntro setState={setState}/>;
             case "dining-vocab":
                 return <DiningVocab setState={setState}/>;
-            case "quiz":
-                return <Quiz setState={setState} />;
+            case "dining-quiz":
+                return <Quiz setState={setState} type="dining"/>;
             default:
                 return <NotFound />;
         }

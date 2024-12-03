@@ -8,23 +8,29 @@ import React, { useState }from "react";
 // renders with state "regular-conjugartions-intro"
 
 export default function Quiz({
-    setState
+    setState,
+    type
 }: {
-    setState: React.Dispatch<React.SetStateAction<string | undefined>>;
+    setState: React.Dispatch<React.SetStateAction<string | undefined>>,
+    type: String
 }) {
-    const questions = [
-        {
-            question: "What does desayuno translate to?",
-            choices: ["lunch", "snack", "beer", "breakfast"],
-            correctIndex: 3
-        },
-        {
-            question: "Fill in the black: Un café (con ___________ )",
-            choices: ["leche", "agua", "vino", "caña"],
-            correctIndex: 0
-        }
-    ];
+    let questions: any[] = [];
+    if (type == "dining") {
+        questions = [
+            {
+                question: "What does desayuno translate to?",
+                choices: ["lunch", "snack", "beer", "breakfast"],
+                correctIndex: 3
+            },
+            {
+                question: "Fill in the black: Un café (con ___________ )",
+                choices: ["leche", "agua", "vino", "caña"],
+                correctIndex: 0
+            }
+        ];
+    }
 
+    
     let mcQuestions =
         questions &&
         questions.map((question) => {

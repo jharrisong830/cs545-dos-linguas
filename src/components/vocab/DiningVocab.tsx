@@ -90,7 +90,7 @@ export default function DiningVocab({
                     </Button>
         <Button // @ts-ignore
             onClick={() =>
-                setState("quiz")
+                setState("dining-quiz")
             }
             variant="success"
             size="lg"
