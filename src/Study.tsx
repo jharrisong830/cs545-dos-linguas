@@ -6,6 +6,8 @@ import RegularConjugationArTable from "./components/grammar/regular/RegularConju
 import DiningVocab from "./components/vocab/DiningVocab";
 import DiningVocabIntro from "./components/vocab/DiningVocabIntro";
 import Quiz from "./components/vocab/VocabQuiz";
+import WorkVocabIntro from "./components/vocab/WorkVocabIntro";
+import WorkVocab from "./components/vocab/WorkVocab";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -19,6 +21,9 @@ export default function Study() {
         }
         if (initialType === "vocab" && initialCategory === "dining") {
             setState("dining-vocab-intro");
+        }
+        if (initialType === "vocab" && initialCategory === "work") {
+            setState("work-vocab-intro");
         }
     }, [params]);
 
@@ -36,6 +41,12 @@ export default function Study() {
                 return <DiningVocab setState={setState}/>;
             case "dining-quiz":
                 return <Quiz setState={setState} type="dining"/>;
+            case "work-vocab-intro":
+                return <WorkVocabIntro setState={setState} />;
+            case "work-vocab":
+                return <WorkVocab setState={setState}/>;
+            case "work-quiz":
+                return <Quiz setState={setState} type="work"/>;
             default:
                 return <NotFound />;
         }

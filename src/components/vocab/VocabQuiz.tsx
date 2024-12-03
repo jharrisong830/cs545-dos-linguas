@@ -29,6 +29,20 @@ export default function Quiz({
             }
         ];
     }
+    else if (type == "work") {
+        questions = [
+            {
+                question: "What does abogado translate to?",
+                choices: ["chef", "teacher", "trucker", "lawyer"],
+                correctIndex: 3
+            },
+            {
+                question: "Fill in the black: Llamada de ___________ ",
+                choices: ["Zoom", "jefe", "colega", "entrevista"],
+                correctIndex: 0
+            }
+        ];
+    }
 
     
     let mcQuestions =
