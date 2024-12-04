@@ -50,10 +50,19 @@ export default function RegularConjugationArTable({
                     <Button
                         variant="secondary"
                         onClick={() => setState("regular-conjugations-intro")}
+                        className="mx-2"
                     >
                         Back
                     </Button>
-                    {/* <Button variant="primary" onClick={() => setState("")}>Continue</Button> */}
+                    <Button
+                        variant="primary"
+                        onClick={() =>
+                            setState("regular-conjugations-er-table")
+                        }
+                        className="mx-2"
+                    >
+                        Continue
+                    </Button>
                 </div>
             </div>
         </main>
