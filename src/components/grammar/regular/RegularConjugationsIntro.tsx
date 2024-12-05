@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import HoverTooltip from "../../HoverTooltip";
 
 // renders with state "regular-conjugartions-intro"
 
@@ -34,6 +35,19 @@ export default function RegularConjugationsIntro({
                         This lesson will cover the basic conjugation rules for
                         regular verbs ending with <strong>-ar</strong>,{" "}
                         <strong>-er</strong>, and <strong>-ir</strong>.
+                    </p>
+
+                    <p>
+                        Need some help during the lesson? Hover over{" "}
+                        <HoverTooltip
+                            tooltipText="Hi! Tooltips will contain translations and examples to help you out."
+                            content={
+                                <span className="fw-semibold text-primary">
+                                    blue text
+                                </span>
+                            }
+                        />{" "}
+                        to get some helpful hints and translations.
                     </p>
 
                     <Button // @ts-ignore

@@ -1,6 +1,8 @@
 import { Button } from "react-bootstrap";
 import ConjugationTable from "./ConjugationTable";
 import { arVerbs } from "../../../data/verbs";
+import MultipleChoice from "../../quiz/MultipleChoice";
+import HoverTooltip from "../../HoverTooltip";
 
 // renders with state "regular-conjugations-ar-table"
 
@@ -46,6 +48,36 @@ export default function RegularConjugationArTable({
                     </p>
 
                     <ConjugationTable sampleVerbs={arVerbs.slice(0, 3)} />
+
+                    <div>
+                        <p>Conjugate "trabajar" to the "tu" form.</p>
+                        <MultipleChoice
+                            choices={[
+                                "trabajo",
+                                "trabaja",
+                                "trabajas",
+                                "trabajan"
+                            ]}
+                            correctIndex={2}
+                        />
+
+                        <p>
+                            Conjugate{" "}
+                            <HoverTooltip
+                                tooltipText="to help"
+                                content={
+                                    <span className="fw-semibold text-primary">
+                                        "ayudar"
+                                    </span>
+                                }
+                            />{" "}
+                            to the "ell/ella/usted" form.
+                        </p>
+                        <MultipleChoice
+                            choices={["ayuda", "ayudamos", "ayudas", "ayudo"]}
+                            correctIndex={0}
+                        />
+                    </div>
 
                     <Button
                         variant="secondary"
