@@ -10,24 +10,20 @@ export default function TravelVocabIntro({
     return (
         <main>
             <div className="py-4">
-                <p className="display-3 fw-semibold">
-                    Travel Vocabulary
-                </p>
+                <p className="display-3 fw-semibold">Travel Vocabulary</p>
             </div>
 
             <div className="py-4">
                 <div className="container">
                     <p>
-                        This lesson will cover essential travel vocabulary and phrases for navigating transportation and exploring new destinations especially in Spanish-speaking countries.
+                        This lesson will cover essential travel vocabulary and
+                        phrases for navigating transportation and exploring new
+                        destinations especially in Spanish-speaking countries.
                     </p>
-
-        
 
                     <Button
                         variant="primary"
-                        onClick={() =>
-                            setState("travel-vocab")
-                        }
+                        onClick={() => setState("travel-vocab")}
                     >
                         Continue
                     </Button>

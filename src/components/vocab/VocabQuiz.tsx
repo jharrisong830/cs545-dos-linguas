@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import { Route, Link, Routes } from "react-router-dom";
 import MultipleChoice from "../quiz/MultipleChoice";
 import OpenEnded from "../quiz/OpenEnded";
-import React, { useState }from "react";
+import React, { useState } from "react";
 
 // renders with state "regular-conjugartions-intro"
 
@@ -11,8 +11,8 @@ export default function Quiz({
     setState,
     type
 }: {
-    setState: React.Dispatch<React.SetStateAction<string | undefined>>,
-    type: String
+    setState: React.Dispatch<React.SetStateAction<string | undefined>>;
+    type: String;
 }) {
     let mcQuestionsList: any[] = [];
     let oeQuestionsList: any[] = [];
@@ -44,9 +44,7 @@ export default function Quiz({
                 questionNumber: 4
             }
         ];
-    }
-
-    else if (type == "work") {
+    } else if (type == "work") {
         mcQuestionsList = [
             {
                 question: "What does abogado translate to?",
@@ -69,13 +67,15 @@ export default function Quiz({
             },
             {
                 question: "What does la presentación translate to?",
-                correctAnswers: ["presentation", "Presentation", "PRESENTATION"],
+                correctAnswers: [
+                    "presentation",
+                    "Presentation",
+                    "PRESENTATION"
+                ],
                 questionNumber: 4
             }
         ];
-    }
-
-    else if (type == "travel") {
+    } else if (type == "travel") {
         mcQuestionsList = [
             {
                 question: "What does 'Suitcase' translate to?",
@@ -107,16 +107,26 @@ export default function Quiz({
     let mcQuestions =
         mcQuestionsList &&
         mcQuestionsList.map((question) => {
-            return <MultipleChoice question={question.question} 
-                                    choices={question.choices} 
-                                    correctIndex={question.correctIndex} 
-                                    questionNumber={question.questionNumber} />;
+            return (
+                <MultipleChoice
+                    question={question.question}
+                    choices={question.choices}
+                    correctIndex={question.correctIndex}
+                    questionNumber={question.questionNumber}
+                />
+            );
         });
 
     let oeQuestions =
         oeQuestionsList &&
         oeQuestionsList.map((question) => {
-            return <OpenEnded question={question.question} correctAnswers={question.correctAnswers} questionNumber={question.questionNumber} />;
+            return (
+                <OpenEnded
+                    question={question.question}
+                    correctAnswers={question.correctAnswers}
+                    questionNumber={question.questionNumber}
+                />
+            );
         });
 
     return (

@@ -50,7 +50,6 @@ export default function RegularConjugationArTable({
                     <ConjugationTable sampleVerbs={arVerbs.slice(0, 3)} />
 
                     <div>
-                        <p>Conjugate "trabajar" to the "tu" form.</p>
                         <MultipleChoice
                             choices={[
                                 "trabajo",
@@ -59,23 +58,30 @@ export default function RegularConjugationArTable({
                                 "trabajan"
                             ]}
                             correctIndex={2}
+                            questionNumber={1}
+                            question={
+                                <p>Conjugate "trabajar" to the "tu" form.</p>
+                            }
                         />
 
-                        <p>
-                            Conjugate{" "}
-                            <HoverTooltip
-                                tooltipText="to help"
-                                content={
-                                    <span className="fw-semibold text-primary">
-                                        "ayudar"
-                                    </span>
-                                }
-                            />{" "}
-                            to the "ell/ella/usted" form.
-                        </p>
                         <MultipleChoice
                             choices={["ayuda", "ayudamos", "ayudas", "ayudo"]}
                             correctIndex={0}
+                            questionNumber={2}
+                            question={
+                                <p>
+                                    Conjugate{" "}
+                                    <HoverTooltip
+                                        tooltipText="to help"
+                                        content={
+                                            <span className="fw-semibold text-primary">
+                                                "ayudar"
+                                            </span>
+                                        }
+                                    />{" "}
+                                    to the "ell/ella/usted" form.
+                                </p>
+                            }
                         />
                     </div>
 

@@ -49,21 +49,21 @@ export default function Study() {
             case "dining-vocab-intro":
                 return <DiningVocabIntro setState={setState} />;
             case "dining-vocab":
-                return <DiningVocab setState={setState}/>;
+                return <DiningVocab setState={setState} />;
             case "dining-quiz":
-                return <Quiz setState={setState} type="dining"/>;
+                return <Quiz setState={setState} type="dining" />;
             case "work-vocab-intro":
                 return <WorkVocabIntro setState={setState} />;
             case "work-vocab":
-                return <WorkVocab setState={setState}/>;
+                return <WorkVocab setState={setState} />;
             case "work-quiz":
-                return <Quiz setState={setState} type="work"/>;
+                return <Quiz setState={setState} type="work" />;
             case "travel-vocab-intro":
                 return <TravelVocabIntro setState={setState} />;
             case "travel-vocab":
-                return <TravelVocab setState={setState}/>;
+                return <TravelVocab setState={setState} />;
             case "travel-quiz":
-                return <Quiz setState={setState} type="travel"/>;    
+                return <Quiz setState={setState} type="travel" />;
             default:
                 return <NotFound />;
         }
