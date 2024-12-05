@@ -20,7 +20,8 @@ export default function DiningVocab({
             <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>Spanish to English</th>
+                    <th>English</th>
+                    <th>Spanish</th>
                 </tr>
             </thead>
             <tbody>

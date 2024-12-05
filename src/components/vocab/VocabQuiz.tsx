@@ -36,15 +36,16 @@ export default function Quiz({
             {
                 question: "What does almuerzo translate to?",
                 correctAnswers: ["lunch", "Lunch", "LUNCH"],
-                questionNumber: 1
+                questionNumber: 3
             },
             {
                 question: "What does cena translate to?",
                 correctAnswers: ["dinner", "Dinner", "DINNER"],
-                questionNumber: 2
+                questionNumber: 4
             }
         ];
     }
+
     else if (type == "work") {
         mcQuestionsList = [
             {
@@ -64,17 +65,45 @@ export default function Quiz({
             {
                 question: "What does entrevista translate to?",
                 correctAnswers: ["interview", "Interview", "INTERVIEW"],
-                questionNumber: 1
+                questionNumber: 3
             },
             {
                 question: "What does la presentación translate to?",
                 correctAnswers: ["presentation", "Presentation", "PRESENTATION"],
-                questionNumber: 2
+                questionNumber: 4
             }
         ];
     }
 
-    
+    else if (type == "travel") {
+        mcQuestionsList = [
+            {
+                question: "What does 'Suitcase' translate to?",
+                choices: ["avióno", "maleta", "reserva", "suitcasa"],
+                correctIndex: 1,
+                questionNumber: 1
+            },
+            {
+                question: "Fill in the black: Tiene ___________ ",
+                choices: ["las indicaciones", "norte", "dónde", "este"],
+                correctIndex: 0,
+                questionNumber: 2
+            }
+        ];
+        oeQuestionsList = [
+            {
+                question: "What does 'North' translate to?",
+                correctAnswers: ["norte", "Norte", "NORTE"],
+                questionNumber: 3
+            },
+            {
+                question: "What does 'avióno' translate to?",
+                correctAnswers: ["airplane", "Airplane", "AIRPLANE"],
+                questionNumber: 4
+            }
+        ];
+    }
+
     let mcQuestions =
         mcQuestionsList &&
         mcQuestionsList.map((question) => {
