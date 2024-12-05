@@ -17,21 +17,28 @@ import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 
 interface MultipleChoiceProps {
+    question: string;
     choices: string[];
     correctIndex: number;
+    questionNumber: number;
 }
 
-const MultipleChoice: React.FC<MultipleChoiceProps> = ({ choices, correctIndex }) => {
+const MultipleChoice: React.FC<MultipleChoiceProps> = ({ question, choices, correctIndex, questionNumber }) => {
     const [selected, setSelected] = useState<number | null>(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitted(true);
+        setIsCorrect(selected === correctIndex);
     };
 
     return (
         <form onSubmit={handleSubmit}>
+            <h2 style={{ color: isSubmitted ? (isCorrect ? 'green' 
+                        : 'red') 
+                        : 'black' }}>{questionNumber}. {question}</h2>
             {choices.map((choice, index) => (
                 <div key={index}>
                     <label style={{ color: isSubmitted ? (index === correctIndex ? 'green' 
@@ -48,7 +55,7 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ choices, correctIndex }
                     </label>
                 </div>
             ))}
-            <Button type="submit" disabled={isSubmitted}>Submit</Button>
+            <Button type="submit" disabled={isSubmitted} style={{ margin: '10px' }}>Submit</Button>
         </form>
     );
 };
