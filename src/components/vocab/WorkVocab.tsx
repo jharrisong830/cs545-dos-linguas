@@ -1,10 +1,10 @@
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
-import { Route, Link, Routes } from "react-router-dom";
+import {Route, Link, Routes} from 'react-router-dom';
 
 // renders with state "regular-conjugartions-intro"
 
-export default function DiningVocab({
+export default function WorkVocab({
     setState
 }: {
     setState: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -12,7 +12,9 @@ export default function DiningVocab({
     return (
         <main>
             <div className="py-4">
-                <p className="display-3 fw-semibold">Dining Vocabulary</p>
+                <p className="display-3 fw-semibold">
+                    Workplace Vocabulary
+                </p>
             </div>
 
             <Table striped bordered hover>
@@ -24,56 +26,60 @@ export default function DiningVocab({
             </thead>
             <tbody>
                 <tr>
-                    <th>desayuno</th>
-                    <th>breakfast</th>
+                <th>la llamada</th>
+                    <th>Phone call</th>
                 </tr>
                 <tr>
-                    <th>almuerzo</th>
-                    <th>lunch</th>
-                </tr>
-                <tr>
-                    <th>cena</th>
-                    <th>dinner</th>
+                <th>llamada de Zoom</th>
+                    <th>Zoom call</th>
                     
                 </tr>
                 <tr>
-                    <th>Una caña</th>
-                    <th>A beer</th>
+                <th>la presentación</th>
+                    <th>Presentation</th>
+                    
                     
                 </tr>
                 <tr>
-                    <th>Una copa de vino blanco/ vino tinto</th>
-                    <th>A glass of white wine / red wine</th>
+                <th>el jefe (male), la jefa (female)</th>
+                    <th>Boss</th>
+                    
                     
                 </tr>
                 <tr>
-                    <th>Un café (con leche) </th>
-                    <th>A coffee (with milk)</th>
+                <th>el/la colega </th>
+                    <th>Colleagues</th>
+                    
                     
                 </tr>
                 <tr>
-                    <th>Gazpacho </th>
-                    <th>Cold vegetable soup</th>
+                    <th>estamos contratando </th>
+                    <th>We are hiring</th>
                     
                 </tr>
                 <tr>
-                    <th>Jamón y queso  </th>
-                    <th>Ham and cheese</th>
+                    <th>Entrevista </th>
+                    <th>Interview</th>
                     
                 </tr>
                 <tr>
-                    <th>Pescaíto frito  </th>
-                    <th>Little fried fish</th>
+                    <th>Abogado </th>
+                    <th>Lawyer</th>
                     
                 </tr>
                 <tr>
-                    <th>Pimientos de padrón </th>
-                    <th>Padrón peppers</th>
+                    <th>Maestro  </th>
+                    <th>Teacher</th>
                     
                 </tr>
                 <tr>
-                    <th>Pincho de tortilla </th>
-                    <th>A piece of tortilla</th>
+                    <th>Enfermero</th>
+                    <th>Nurse</th>
+                    
+                </tr>
+                <tr>
+                    <th>Cocinero </th>
+                    <th>Cook</th>
                     
                 </tr>
             </tbody>
@@ -89,7 +95,7 @@ export default function DiningVocab({
                     </Button>
         <Button // @ts-ignore
             onClick={() =>
-                setState("dining-quiz")
+                setState("work-quiz")
             }
             variant="success"
             size="lg"

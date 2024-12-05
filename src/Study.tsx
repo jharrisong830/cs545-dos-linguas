@@ -8,6 +8,10 @@ import RegularConjugationIrTable from "./components/grammar/regular/RegularConju
 import DiningVocab from "./components/vocab/DiningVocab";
 import DiningVocabIntro from "./components/vocab/DiningVocabIntro";
 import Quiz from "./components/vocab/VocabQuiz";
+import WorkVocabIntro from "./components/vocab/WorkVocabIntro";
+import WorkVocab from "./components/vocab/WorkVocab";
+import TravelVocabIntro from "./components/vocab/TravelVocabIntro";
+import TravelVocab from "./components/vocab/TravelVocab";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -21,6 +25,12 @@ export default function Study() {
         }
         if (initialType === "vocab" && initialCategory === "dining") {
             setState("dining-vocab-intro");
+        }
+        if (initialType === "vocab" && initialCategory === "work") {
+            setState("work-vocab-intro");
+        }
+        if (initialType === "vocab" && initialCategory === "travel") {
+            setState("travel-vocab-intro");
         }
     }, [params]);
 
@@ -39,9 +49,21 @@ export default function Study() {
             case "dining-vocab-intro":
                 return <DiningVocabIntro setState={setState} />;
             case "dining-vocab":
-                return <DiningVocab setState={setState} />;
-            case "quiz":
-                return <Quiz setState={setState} />;
+                return <DiningVocab setState={setState}/>;
+            case "dining-quiz":
+                return <Quiz setState={setState} type="dining"/>;
+            case "work-vocab-intro":
+                return <WorkVocabIntro setState={setState} />;
+            case "work-vocab":
+                return <WorkVocab setState={setState}/>;
+            case "work-quiz":
+                return <Quiz setState={setState} type="work"/>;
+            case "travel-vocab-intro":
+                return <TravelVocabIntro setState={setState} />;
+            case "travel-vocab":
+                return <TravelVocab setState={setState}/>;
+            case "travel-quiz":
+                return <Quiz setState={setState} type="travel"/>;    
             default:
                 return <NotFound />;
         }
