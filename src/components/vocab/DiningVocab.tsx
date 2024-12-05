@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
-import {Route, Link, Routes} from 'react-router-dom';
+import { Route, Link, Routes } from "react-router-dom";
 
 // renders with state "regular-conjugartions-intro"
 
@@ -12,9 +12,7 @@ export default function DiningVocab({
     return (
         <main>
             <div className="py-4">
-                <p className="display-3 fw-semibold">
-                    Dining Vocabulary
-                </p>
+                <p className="display-3 fw-semibold">Dining Vocabulary</p>
             </div>
 
             <Table striped bordered hover>

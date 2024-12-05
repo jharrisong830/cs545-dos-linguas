@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
-import {Route, Link, Routes} from 'react-router-dom';
+import { Route, Link, Routes } from "react-router-dom";
 import MultipleChoice from "../quiz/MultipleChoice";
 import OpenEnded from "../quiz/OpenEnded";
 import React, { useState }from "react";
@@ -140,7 +140,7 @@ export default function Quiz({
             <br />
             <br />
             <br />
-            
+
             <Button // @ts-ignore
                 as={Link}
                 to="/"
@@ -151,6 +151,5 @@ export default function Quiz({
                 Back to Home
             </Button>
         </>
-
     );
 }

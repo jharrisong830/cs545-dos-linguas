@@ -13,7 +13,7 @@
 
 // export default MultipleChoice;
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 interface MultipleChoiceProps {
@@ -41,9 +41,17 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ question, choices, corr
                         : 'black' }}>{questionNumber}. {question}</h2>
             {choices.map((choice, index) => (
                 <div key={index}>
-                    <label style={{ color: isSubmitted ? (index === correctIndex ? 'green' 
-                        : (selected === index ? 'red' : 'black')) 
-                        : 'black' }}>
+                    <label
+                        style={{
+                            color: isSubmitted
+                                ? index === correctIndex
+                                    ? "green"
+                                    : selected === index
+                                      ? "red"
+                                      : "black"
+                                : "black"
+                        }}
+                    >
                         <input
                             type="radio"
                             name="choice"

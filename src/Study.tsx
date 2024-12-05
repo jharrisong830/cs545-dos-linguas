@@ -3,6 +3,8 @@ import RegularConjugationsIntro from "./components/grammar/regular/RegularConjug
 import { useEffect, useState } from "react";
 import NotFound from "./NotFound";
 import RegularConjugationArTable from "./components/grammar/regular/RegularConjugationsArTable";
+import RegularConjugationErTable from "./components/grammar/regular/RegularConjugationsErTable";
+import RegularConjugationIrTable from "./components/grammar/regular/RegularConjugationsIrTable";
 import DiningVocab from "./components/vocab/DiningVocab";
 import DiningVocabIntro from "./components/vocab/DiningVocabIntro";
 import Quiz from "./components/vocab/VocabQuiz";
@@ -40,8 +42,12 @@ export default function Study() {
                 return <RegularConjugationsIntro setState={setState} />;
             case "regular-conjugations-ar-table":
                 return <RegularConjugationArTable setState={setState} />;
+            case "regular-conjugations-er-table":
+                return <RegularConjugationErTable setState={setState} />;
+            case "regular-conjugations-ir-table":
+                return <RegularConjugationIrTable setState={setState} />;
             case "dining-vocab-intro":
-                return <DiningVocabIntro setState={setState}/>;
+                return <DiningVocabIntro setState={setState} />;
             case "dining-vocab":
                 return <DiningVocab setState={setState}/>;
             case "dining-quiz":
