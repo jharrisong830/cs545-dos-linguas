@@ -22,6 +22,15 @@ export default function Grammar() {
                     >
                         Regular Verbs
                     </Button>
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/study?type=grammar&category=irregular"
+                        variant="primary"
+                        size="lg"
+                        className="mx-2"
+                    >
+                        Irregular Verbs
+                    </Button>
                 </div>
             </div>
         </main>

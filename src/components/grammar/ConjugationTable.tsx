@@ -1,4 +1,4 @@
-import { generateConjugations, Verb } from "../../../data/verbs";
+import { generateConjugations, Verb } from "../../data/verbs";
 import { Table } from "react-bootstrap";
 
 export default function ConjugationTable({
@@ -6,7 +6,8 @@ export default function ConjugationTable({
 }: {
     sampleVerbs: Array<Verb>;
 }) {
-    sampleVerbs = generateConjugations(sampleVerbs);
+    if (sampleVerbs[0].suffix !== "irregular")
+        sampleVerbs = generateConjugations(sampleVerbs);
     console.log(sampleVerbs);
 
     return (

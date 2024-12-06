@@ -152,7 +152,6 @@ export const erVerbs: Array<Verb> = [
     { infinitive: "comer", english: "to eat", suffix: "er" },
     { infinitive: "comprender", english: "to understand", suffix: "er" },
     { infinitive: "correr", english: "to run", suffix: "er" },
-    { infinitive: "leer", english: "to read", suffix: "er" },
     { infinitive: "meter", english: "to put into", suffix: "er" },
     { infinitive: "prender", english: "to catch", suffix: "er" },
     { infinitive: "romper", english: "to break", suffix: "er" },
