@@ -6,7 +6,8 @@ export default function ConjugationTable({
 }: {
     sampleVerbs: Array<Verb>;
 }) {
-    sampleVerbs = generateConjugations(sampleVerbs);
+    if (sampleVerbs[0].suffix !== "irregular")
+        sampleVerbs = generateConjugations(sampleVerbs);
     console.log(sampleVerbs);
 
     return (
