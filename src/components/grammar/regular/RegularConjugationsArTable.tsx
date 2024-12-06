@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import ConjugationTable from "./ConjugationTable";
+import ConjugationTable from "../ConjugationTable";
 import { arVerbs } from "../../../data/verbs";
 import MultipleChoice from "../../quiz/MultipleChoice";
 import HoverTooltip from "../../HoverTooltip";

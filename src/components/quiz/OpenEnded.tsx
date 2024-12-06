@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 
 // renders with state "regular-conjugartions-intro"
-interface OpenEndedProps {
+export interface OpenEndedProps {
     question: string | JSX.Element;
     correctAnswers: string[];
     questionNumber: number;

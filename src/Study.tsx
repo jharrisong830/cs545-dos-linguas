@@ -12,6 +12,8 @@ import WorkVocabIntro from "./components/vocab/WorkVocabIntro";
 import WorkVocab from "./components/vocab/WorkVocab";
 import TravelVocabIntro from "./components/vocab/TravelVocabIntro";
 import TravelVocab from "./components/vocab/TravelVocab";
+import RegularConjugationsQuiz from "./components/grammar/regular/RegularConjugationsQuiz";
+import RegularConjugationsQuizIntro from "./components/grammar/regular/RegularConjugationsQuizIntro";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -46,6 +48,10 @@ export default function Study() {
                 return <RegularConjugationErTable setState={setState} />;
             case "regular-conjugations-ir-table":
                 return <RegularConjugationIrTable setState={setState} />;
+            case "regular-conjugations-quiz-intro":
+                return <RegularConjugationsQuizIntro setState={setState} />;
+            case "regular-conjugations-quiz":
+                return <RegularConjugationsQuiz setState={setState} />;
             case "dining-vocab-intro":
                 return <DiningVocabIntro setState={setState} />;
             case "dining-vocab":

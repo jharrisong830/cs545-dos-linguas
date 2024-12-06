@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import ConjugationTable from "./ConjugationTable";
+import ConjugationTable from "../ConjugationTable";
 import { irVerbs } from "../../../data/verbs";
 import HoverTooltip from "../../HoverTooltip";
 import MultipleChoice from "../../quiz/MultipleChoice";
@@ -120,6 +120,15 @@ export default function RegularConjugationIrTable({
                         className="mx-2"
                     >
                         Back
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={() =>
+                            setState("regular-conjugations-quiz-intro")
+                        }
+                        className="mx-2"
+                    >
+                        Continue to Quiz
                     </Button>
                 </div>
             </div>

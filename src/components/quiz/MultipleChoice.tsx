@@ -16,7 +16,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-interface MultipleChoiceProps {
+export interface MultipleChoiceProps {
     question: string | JSX.Element;
     choices: string[];
     correctIndex: number;
