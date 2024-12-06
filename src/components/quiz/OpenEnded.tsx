@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // renders with state "regular-conjugartions-intro"
 interface OpenEndedProps {
-    question: string;
+    question: string | JSX.Element;
     correctAnswers: string[];
     questionNumber: number;
 }
@@ -26,7 +26,7 @@ const OpenEnded: React.FC<OpenEndedProps> = ({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitted(true);
-        setIsCorrect(correctAnswers.includes(answer.trim()));
+        setIsCorrect(correctAnswers.includes(answer.trim().toLowerCase()));
     };
 
     return (
