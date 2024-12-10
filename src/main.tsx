@@ -6,7 +6,7 @@ import App from "./App.tsx";
 import NotFound from "./NotFound.tsx";
 import Vocab from "./Vocab.tsx";
 import Grammar from "./Grammar.tsx";
-import Conversations from "./Conversations.tsx";
+import ConversationsIntro from "./ConversationsIntro.tsx";
 import Study from "./Study.tsx";
 
 import "./index.css";
@@ -16,7 +16,6 @@ const router = createBrowserRouter([
     { path: "/", element: <App /> },
     { path: "/vocab", element: <Vocab /> },
     { path: "/grammar", element: <Grammar /> },
-    { path: "/conversations", element: <Conversations /> },
     { path: "/study", element: <Study /> },
     { path: "*", element: <NotFound /> }
 ]);

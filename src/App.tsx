@@ -47,7 +47,7 @@ function App() {
                     </Button>
                     <Button // @ts-ignore
                         as={Link}
-                        to="/conversations"
+                        to="/study?type=convo"
                         variant="danger"
                         size="lg"
                         className="mx-2"

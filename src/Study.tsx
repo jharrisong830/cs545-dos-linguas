@@ -17,6 +17,8 @@ import RegularConjugationsQuizIntro from "./components/grammar/regular/RegularCo
 import IrregularConjugationsIntro from "./components/grammar/irregular/IrregularConjugationsIntro";
 import IrregularConjugationsQuizIntro from "./components/grammar/irregular/IrregularConjugationsQuizIntro";
 import IrregularConjugationsQuiz from "./components/grammar/irregular/IrregularConjugationsQuiz";
+import ConversationsIntro from "./ConversationsIntro";
+import ConversationsFinal from "./ConversationsFinal";
 
 export default function Study() {
     const [params, _] = useSearchParams();
@@ -40,12 +42,19 @@ export default function Study() {
         if (initialType === "vocab" && initialCategory === "travel") {
             setState("travel-vocab-intro");
         }
+        if (initialType === "convo") {
+            setState("convo-quiz-intro");
+        }
     }, [params]);
 
     const renderCurrentState = (currState?: string) => {
         switch (currState) {
             case undefined:
                 return <></>;
+            case "convo-quiz-intro":
+                return <ConversationsIntro setState={setState}/>
+            case "convo-quiz":
+                return <ConversationsFinal setState={setState}/>
             case "regular-conjugations-intro":
                 return <RegularConjugationsIntro setState={setState} />;
             case "regular-conjugations-ar-table":
