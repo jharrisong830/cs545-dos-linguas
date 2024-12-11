@@ -104,6 +104,8 @@ export default function Quiz({
         ];
     }
 
+    const [score, setScore] = useState(0);
+
     let mcQuestions =
         mcQuestionsList &&
         mcQuestionsList.map((question) => {
@@ -113,6 +115,7 @@ export default function Quiz({
                     choices={question.choices}
                     correctIndex={question.correctIndex}
                     questionNumber={question.questionNumber}
+                    setScore={setScore}
                 />
             );
         });
@@ -125,13 +128,21 @@ export default function Quiz({
                     question={question.question}
                     correctAnswers={question.correctAnswers}
                     questionNumber={question.questionNumber}
+                    setScore={setScore}
                 />
             );
         });
 
+    const totalQuestions = mcQuestions.length + oeQuestions.length;
+
     return (
         <>
             <h1>Test Your Knowledge</h1>
+
+            <div className="py-4">
+                <p className={`display-6 fw-semibold${score === totalQuestions ? " text-body-success" : ""}`}>Score: {score} / {totalQuestions}</p>
+            </div>
+
             {mcQuestionsList.map((q, index) => (
                 <div key={index}>
                     {mcQuestions[index]}

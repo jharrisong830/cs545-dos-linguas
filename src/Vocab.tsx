@@ -22,10 +22,15 @@ export default function Vocab() {
                     >
                         Food & Dining
                     </Button>
-                </div>
-            </div>
-            <div className="py-4">
-                <div className="container">
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/study?type=vocab&category=travel"
+                        variant="primary"
+                        size="lg"
+                        className="mx-2"
+                    >
+                        Travel
+                    </Button>
                     <Button // @ts-ignore
                         as={Link}
                         to="/study?type=vocab&category=work"
@@ -41,12 +46,11 @@ export default function Vocab() {
                 <div className="container">
                     <Button // @ts-ignore
                         as={Link}
-                        to="/study?type=vocab&category=travel"
+                        to="/"
                         variant="primary"
-                        size="lg"
                         className="mx-2"
                     >
-                        Travel
+                        Home
                     </Button>
                 </div>
             </div>
