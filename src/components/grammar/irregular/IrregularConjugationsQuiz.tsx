@@ -1,5 +1,6 @@
 // renders with state "irregular-conjugartions-quiz"
 
+import { useState } from "react";
 import MultipleChoice, { MultipleChoiceProps } from "../../quiz/MultipleChoice";
 import OpenEnded, { OpenEndedProps } from "../../quiz/OpenEnded";
 import { irregularVerbs } from "../../../data/verbs";
@@ -46,7 +47,7 @@ export default function IrregularConjugationsQuiz({
             questionNumber: 3
         },
         {
-            question: `Conjugate ${irregularVerbs[1].infinitive} to the "nosotros" form.`,
+            question: `Conjugate ${irregularVerbs[2].infinitive} to the "nosotros" form.`,
             choices: [
                 irregularVerbs[2].ellosEllasUstedes!,
                 irregularVerbs[2].nosotros!,
@@ -71,6 +72,9 @@ export default function IrregularConjugationsQuiz({
         }
     ];
 
+    const totalQuestions = multipleChoiceQuestions.length + openEndedQuestions.length;
+    const [score, setScore] = useState(0);
+
     return (
         <main>
             <div className="py-4">
@@ -80,11 +84,15 @@ export default function IrregularConjugationsQuiz({
             </div>
 
             <div className="py-4">
+                <p className={`display-6 fw-semibold${score === totalQuestions ? " text-body-success" : ""}`}>Score: {score} / {totalQuestions}</p>
+            </div>
+
+            <div className="py-4">
                 {multipleChoiceQuestions.map((q: MultipleChoiceProps) => (
-                    <MultipleChoice {...q} />
+                    <MultipleChoice {...q} setScore={setScore} />
                 ))}
                 {openEndedQuestions.map((q: OpenEndedProps) => (
-                    <OpenEnded {...q} />
+                    <OpenEnded {...q} setScore={setScore}/>
                 ))}
             </div>
 

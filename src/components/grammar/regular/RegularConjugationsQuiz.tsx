@@ -1,5 +1,6 @@
 // renders with state "regular-conjugartions-quiz"
 
+import { useState } from "react";
 import MultipleChoice, { MultipleChoiceProps } from "../../quiz/MultipleChoice";
 import OpenEnded, { OpenEndedProps } from "../../quiz/OpenEnded";
 import {
@@ -107,6 +108,9 @@ export default function RegularConjugationsQuiz({
         }
     ];
 
+    const totalQuestions = multipleChoiceQuestions.length + openEndedQuestions.length;
+    const [score, setScore] = useState(0);
+
     return (
         <main>
             <div className="py-4">
@@ -116,11 +120,15 @@ export default function RegularConjugationsQuiz({
             </div>
 
             <div className="py-4">
+                <p className={`display-6 fw-semibold${score === totalQuestions ? " text-body-success" : ""}`}>Score: {score} / {totalQuestions}</p>
+            </div>
+
+            <div className="py-4">
                 {multipleChoiceQuestions.map((q: MultipleChoiceProps) => (
-                    <MultipleChoice {...q} />
+                    <MultipleChoice {...q} setScore={setScore} />
                 ))}
                 {openEndedQuestions.map((q: OpenEndedProps) => (
-                    <OpenEnded {...q} />
+                    <OpenEnded {...q} setScore={setScore} />
                 ))}
             </div>
 
