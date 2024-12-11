@@ -21,13 +21,15 @@ export interface MultipleChoiceProps {
     choices: string[];
     correctIndex: number;
     questionNumber: number;
+    setScore?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const MultipleChoice: React.FC<MultipleChoiceProps> = ({
     question,
     choices,
     correctIndex,
-    questionNumber
+    questionNumber,
+    setScore
 }) => {
     const [selected, setSelected] = useState<number | null>(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,6 +39,9 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({
         e.preventDefault();
         setIsSubmitted(true);
         setIsCorrect(selected === correctIndex);
+        if (setScore && selected === correctIndex) { // set the correct index to send it back to the parent component
+            setScore((curr) => curr + 1);
+        }
     };
 
     return (

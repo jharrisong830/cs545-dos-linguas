@@ -6,12 +6,14 @@ export interface OpenEndedProps {
     question: string | JSX.Element;
     correctAnswers: string[];
     questionNumber: number;
+    setScore?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const OpenEnded: React.FC<OpenEndedProps> = ({
     question,
     correctAnswers,
-    questionNumber
+    questionNumber,
+    setScore
 }) => {
     //make a form with a text input
     //send over a question and a list of correct answers as a prop
@@ -27,6 +29,9 @@ const OpenEnded: React.FC<OpenEndedProps> = ({
         e.preventDefault();
         setIsSubmitted(true);
         setIsCorrect(correctAnswers.includes(answer.trim().toLowerCase()));
+        if (setScore && correctAnswers.includes(answer.trim().toLowerCase())) { // set the correct index to send it back to the parent component
+            setScore((curr) => curr + 1);
+        }
     };
 
     return (

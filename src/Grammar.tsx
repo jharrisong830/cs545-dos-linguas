@@ -33,6 +33,19 @@ export default function Grammar() {
                     </Button>
                 </div>
             </div>
+
+            <div className="py-4">
+                <div className="container">
+                    <Button // @ts-ignore
+                        as={Link}
+                        to="/"
+                        variant="primary"
+                        className="mx-2"
+                    >
+                        Home
+                    </Button>
+                </div>
+            </div>
         </main>
     );
 }
